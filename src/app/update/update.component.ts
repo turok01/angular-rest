@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Subst} from "../subst-list/subst";
 import {ActivatedRoute} from "@angular/router";
 import {HttpService} from "../service/http.service";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-update',
@@ -20,6 +21,8 @@ export class UpdateComponent implements OnInit {
   subst : Subst;
   id : number;
 
+  baseUrl = environment.baseUrl;
+
   constructor(private httpClient:HttpClient, private httpService: HttpService,  private activatedRoute: ActivatedRoute){}
 
   ngOnInit(): void {
@@ -33,7 +36,7 @@ export class UpdateComponent implements OnInit {
 
     //this.httpClient.patch(
     this.httpClient.put(
-      'https://localhost:8443/rest/' + this.id,body,{
+      this.baseUrl + '/rest/' + this.id,body,{
       //'https://localhost:8443/rest/' + this.id,this.model,{
         headers: new HttpHeaders().set('Content-type','application/json'),
       }).subscribe(res => {
@@ -57,9 +60,9 @@ export class UpdateComponent implements OnInit {
   saveUpdate(){
     const myHeaders = new HttpHeaders().set("Content-Type", "application/json");
     const body = {nameSubst: this.subst.nameSubst, zone: this.subst.zone};
-    this.subst.nameSubst="ТП-6u";
+    //this.subst.nameSubst="ТП-6u";
     this.httpClient.patch(
-      'https://localhost:8443/rest/' + this.id, body ,{headers: myHeaders}).subscribe(res => {
+      this.baseUrl + '/rest/' + this.id, body ,{headers: myHeaders}).subscribe(res => {
         console.log('received ok response from patch request');
       },
       error => {
@@ -71,7 +74,7 @@ export class UpdateComponent implements OnInit {
   }
   delete(){
     //const myHeaders = new HttpHeaders().set("Content-Type", "application/json");
-    this.httpClient.delete('https://localhost:8443/rest/' + this.id).subscribe(
+    this.httpClient.delete(this.baseUrl + '/rest/' + this.id).subscribe(
       res=>{console.log('received ok response from DELETE request');},
       error=>{console.log('There was an error during the DELETE request');
                     console.log(error);}
