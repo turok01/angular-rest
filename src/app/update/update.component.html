@@ -19,11 +19,12 @@
   </tr>
   </tbody>
 </table>
-<form (ngSubmit)="onSubmit()">
-  <button> Редактировать подстанцию {{subst.id}} (PUT request)</button>
-  <!--<button class ="GFG" [routerLink]="'/rest/update/' + subst.id"> Сохранить {{subst.id}}</button>
-  -->
-</form>
+<br>
+<div style="font-weight:bold;">
+  <label>Внесите изменения:</label>
+</div>
+<br>
+
 <div class="class1">
   <div class="form-group">
     <label>Наименование </label>
@@ -40,6 +41,12 @@
     <input class="form-control" name="zone"
            [(ngModel)]="subst.zone" />
   </div>
+  <br>
+  <form (ngSubmit)="onSubmit()">
+    <button> Редактировать подстанцию {{subst.id}} (PUT request)</button>
+    <!--<button class ="GFG" [routerLink]="'/rest/update/' + subst.id"> Сохранить {{subst.id}}</button>
+    -->
+  </form>
   <div class="form-group">
     <button (click)="saveUpdate()">
       Изменить только имя (PATCH request)
