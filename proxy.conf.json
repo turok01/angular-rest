@@ -1,6 +1,6 @@
 {
   "/": {
-    "target": "http://localhost:8443",
+    "target": "https://springandangularmps.herokuapp.com",
     "secure": false
   }
 }
