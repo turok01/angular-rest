@@ -47,7 +47,7 @@ export class UpdateComponent implements OnInit {
                     console.log(error);
                   }
                   );
-    console.log('request sent. Waiting for response...');
+    console.log('Request sent. Waiting for response...');
 
 
 

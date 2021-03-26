@@ -51,7 +51,7 @@ export class AddComponent implements OnInit {
       //'https://localhost:8443/rest/add',
       this.baseUrl + '/rest/add',
       this.subst ,{headers: myHeaders}).subscribe(res => {
-        console.log('received ok response from post request');
+        console.log('Received ok response from post request');
       },
       error => {
         console.error('There was an error during the request');
