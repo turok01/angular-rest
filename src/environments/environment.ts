@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  //baseUrl: 'http://localhost:8443'
-  baseUrl:'https://springandangularmps.herokuapp.com'
+  baseUrl: 'http://localhost:8443'
+  //baseUrl:'https://springandangularmps.herokuapp.com'
 };
 
 /*
