@@ -1,6 +1,8 @@
 # MPSUi
 Frontend part of TransformerSubstations Application
 
+Use https://springangularrest.herokuapp.com/ to enter on site in production mode.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
 
 ## Development server
